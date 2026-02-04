@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>NO LAZINESS AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Logo -->
+    <p class="top-left">
+        <img src="AIlogo.jpg" alt="Logo" class="logo">
+        NO LAZINESS AI
+    </p>
+
+    <!-- Background circles -->
+    <div class="circle c1"></div>
+    <div class="circle c2"></div>
+    <div class="circle c3"></div>
+
+    <!-- Header -->
+    <header>
+        <h1>
+            Where you turn <br>
+            your laziness into <span class="power-word">POWER</span>
+        </h1>
+        <span class="santanses">
+            Just Enter Your Task And Let Us Do The Rest
+        </span>
+    </header>
+
+    <!-- Add Task -->
+    <div class="task-input">
+        <input type="text" id="taskInput" placeholder="Enter Task">
+        <input type="text" id="difficultyInput" placeholder="Difficulty">
+        <input type="text" id="ratingInput" placeholder="Rating">
+        <button onclick="addTask()">+ Add Task</button>
+        <!-- <button></button> -->
+    </div>
+
+    <!-- Search -->
+    <div class="task-search">
+        <input type="text" id="searchInput" placeholder="Search task...">
+        <button onclick="searchTask()">🔍</button>
+    </div>
+
+    <!-- Table Cover -->
+    <div class="table-wrapper">
+        <table class="task-table">
+            <tbody id="taskTableBody">
+                <tr>
+                    <th>Task : </th>
+                    <th>Difficulty : </th>
+                    <th>Rating : </th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="chat-button-container">
+    <button class="chat-btn" onclick="goToChat()">Chat with NLAI</button>
+</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

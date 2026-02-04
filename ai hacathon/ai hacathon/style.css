@@ -1,0 +1,192 @@
+body {
+    background-color: rgb(74, 96, 117);
+    margin: 0;
+    font-family: Inter, sans-serif;
+    position: relative;
+}
+
+/* Logo */
+.logo {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.top-left {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    z-index: 10;
+}
+
+/* Background circles */
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.6;
+    z-index: 0;
+}
+
+/* circle 1 */
+.c1 {
+    width: 1000px;
+    height: 1000px;
+    background: #1f213c;
+    top: -300px;
+    right: -100px;
+}
+
+/* circle 2 */
+.c2 {
+    width: 1000px;
+    height: 1000px;
+    background: #010011;
+    top: 300px;
+    right: 300px;
+}
+
+/* circle 3 */
+.c3 {
+    width: 1000px;
+    height: 1000px;
+    background: #0e1433;
+    top: 500px;
+    right: -200px;
+}
+
+/* Header */
+header {
+    height: 400px;
+    padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* add font to words */
+header h1 {
+    font-size: 50px;
+    margin: 0;
+}
+
+/* Power animation */
+@keyframes slideFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+
+    /* return the element to oregenal site */
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* power word */
+.power-word {
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    animation: slideFadeIn 1s ease-out;
+}
+
+/* order the font */
+.santanses {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* Inputs upove the circit*/
+.task-input,
+.task-search {
+    width: 80%;
+    margin: 20px auto;
+    display: flex;
+    gap: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+/* make the box bigger */
+.task-input input,
+.task-search input {
+    padding: 10px;
+    flex: 1;
+}
+
+/* make the button is more nice and add the search and task  */
+.task-input button,
+.task-search button {
+    padding: 10px 15px;
+    /* cursor: pointer; */
+}
+
+/* Table Cover (PURE) */
+.table-wrapper {
+    width: 85%;
+    margin: 40px auto;
+    padding: 30px;
+    background: rgba(15, 18, 40, 0.95);
+    /* pure clean cover */
+    border-radius: 16px;
+    position: relative;
+    z-index: 5;
+}
+
+/* make the Table more order */
+.task-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: rgb(231, 222, 222);
+}
+
+
+/* add the line for the table */
+.task-table th,
+.task-table td {
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    padding: 12px;
+}
+
+
+/* add effect for the odd table */
+.task-table tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Chat Button */
+.chat-button-container {
+    position: relative;
+    bottom: 30px;
+    right: 30px;
+    z-index: 20;
+
+    display: flex ;
+    justify-content: center ;
+    align-items: center ;
+}
+
+.chat-btn {
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+
+    background: linear-gradient(135deg, #6a5acd, #00bcd4);
+    color: white;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.chat-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+}

@@ -29,6 +29,7 @@ const USE_OPENAI = !!process.env.OPENAI_API_KEY;
 
 app.post("/chat", async (req, res) => {
     const userMessage = req.body.message;
+    const tasks = req.body.tasks || [];
 
     if (!userMessage) {
         return res.status(400).json({ reply: "Message is empty" });
@@ -40,6 +41,11 @@ app.post("/chat", async (req, res) => {
 
     try {
         let url, payload, headers;
+        
+        // Build system prompt with task context
+        const taskContext = tasks.length > 0 
+            ? `The user has the following tasks:\n${JSON.stringify(tasks, null, 2)}\n\nPlease consider these tasks when responding.`
+            : "";
 
         if (USE_OPENAI) {
             // OpenAI API
@@ -51,7 +57,7 @@ app.post("/chat", async (req, res) => {
             payload = {
                 model: "gpt-3.5-turbo",
                 messages: [
-                    { role: "system", content: "You are a helpful assistant." },
+                    { role: "system", content: `You are a helpful assistant. ${taskContext}` },
                     { role: "user", content: userMessage }
                 ]
             };
@@ -63,7 +69,7 @@ app.post("/chat", async (req, res) => {
                 contents: [
                     {
                         parts: [
-                            { text: userMessage }
+                            { text: taskContext + "\n\nUser message: " + userMessage }
                         ]
                     }
                 ],
@@ -103,3 +109,5 @@ app.post("/chat", async (req, res) => {
 app.listen(3000, () => {
     console.log("Server running at http://localhost:3000");
 });
+
+

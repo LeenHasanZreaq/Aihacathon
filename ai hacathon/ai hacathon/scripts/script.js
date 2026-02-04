@@ -19,6 +19,20 @@ function addTask() {
     document.getElementById("taskInput").value = "";
     document.getElementById("difficultyInput").value = "";
     document.getElementById("ratingInput").value = "";
+    console.log(savealltasks());
+}
+
+function savealltasks() {
+    const table = document.getElementById("taskTableBody");
+    const tasks = [];
+    for (let i = 1, row; row = table.rows[i]; i++) {
+        const task = row.cells[0].innerText;
+        const difficulty = row.cells[1].innerText;
+        const rating = row.cells[2].innerText;
+        tasks.push({ task, difficulty, rating });
+    }
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+    return tasks;
 }
 
 function searchTask() {

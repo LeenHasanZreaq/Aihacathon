@@ -85,3 +85,21 @@ body {
     color: white;
     font-weight: bold;
 }
+
+/* Tasks container styling */
+.tasks-container {
+    margin-top: 10px;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-left: 3px solid #ffc107;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.task-item {
+    margin-top: 6px;
+    padding: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    font-size: 11px;
+}

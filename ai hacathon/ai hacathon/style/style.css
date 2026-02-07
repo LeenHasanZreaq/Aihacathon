@@ -7,7 +7,7 @@ body {
 
 /* Logo */
 .logo {
-    width: 40px;
+    width: 60px;
     height: 40px;
     vertical-align: middle;
     margin-right: 5px;
@@ -57,7 +57,7 @@ body {
     right: -200px;
 }
 
-/* Header */
+/* Header for all page and (where you turn ...)*/
 header {
     height: 400px;
     padding-left: 50px;
@@ -95,27 +95,30 @@ header h1 {
     animation: slideFadeIn 1s ease-out;
 }
 
-/* order the font */
+/* order the font in just enter your task ... */
 .santanses {
     font-size: 18px;
     margin-top: 10px;
+    
 }
 
-/* Inputs upove the circit*/
+/* Inputs upove the circit , make the destance between the square */
 .task-input,
 .task-search {
     width: 80%;
+    /* to stay the element in the middel */
     margin: 20px auto;
+    
     display: flex;
     gap: 10px;
     position: relative;
     z-index: 2;
 }
 
-/* make the box bigger */
+/* order the width and hight */
 .task-input input,
 .task-search input {
-    padding: 10px;
+    padding: 0px;
     flex: 1;
 }
 
@@ -138,7 +141,7 @@ header h1 {
     z-index: 5;
 }
 
-/* make the Table more order */
+/* make the Table more order and add give font a color */
 .task-table {
     width: 100%;
     border-collapse: collapse;
@@ -177,16 +180,16 @@ header h1 {
     font-weight: bold;
     border-radius: 30px;
     border: none;
-    cursor: pointer;
+    /* cursor: pointer; */
 
-    background: linear-gradient(135deg, #6a5acd, #00bcd4);
+    background: linear-gradient(135deg, #110370, #5b9198);
     color: white;
 
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 10px 25px rgba(141, 1, 1, 0.4);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .chat-btn:hover {
     transform: scale(1.05);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 15px 35px rgba(202, 111, 111, 0.6);
 }

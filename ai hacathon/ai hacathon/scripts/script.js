@@ -51,7 +51,6 @@ function searchTask() {
 }
 
 function goToChat() {
-    // Change this file name to your chat page
     window.location.href = "chat.html";
 }
 

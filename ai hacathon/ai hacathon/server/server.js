@@ -27,7 +27,7 @@ app.use((req, res, next) => {
     next();
 });
 
-// Use API_KEY from environment - supports both OpenAI and Gemini
+// Use API_KEY from environment - supports Gemini
 const API_KEY = process.env.OPENAI_API_KEY || process.env.GEMINI_API_KEY;
 const USE_OPENAI = !!process.env.OPENAI_API_KEY;
 
@@ -93,6 +93,7 @@ app.post("/chat", async (req, res) => {
                         ]
                     }
                 ],
+
                 // The generationConfig allows us to control the behavior of the response generation.
                 generationConfig: {
                     temperature: 0.7,
@@ -120,8 +121,10 @@ app.post("/chat", async (req, res) => {
             return res.status(response.status).json({ reply: `API Error: ${data.error?.message || "Unknown error"}` });
         }
 
-        // Extract reply based on API used - for OpenAI, we look for the content of the first message in the choices array.
-        // For Gemini, we look for the text in the first part of the candidates array. If we can't extract a response, we return a default error message.
+        // Extract reply based on API used - for OpenAI,
+        //  we look for the content of the first message in the choices array.
+        // For Gemini, we look for the text in the first part of the candidates array.
+        //  If we can't extract a response, we return a default error message.
         const reply = USE_OPENAI
             ? data.choices?.[0]?.message?.content || "Could not extract response"
             : data.candidates?.[0]?.content?.parts?.[0]?.text || "Could not extract response";
@@ -132,7 +135,8 @@ app.post("/chat", async (req, res) => {
     
     // If any error occurs during the API call or response processing, 
     // we catch it,
-    //  log the error for debugging purposes, and return a 500 Internal Server Error with a JSON response containing an error message.
+    //  log the error for debugging purposes, 
+    // and return a 500 Internal Server Error with a JSON response containing an error message.
 
     catch (err) {
         console.error("Server Error:", err);
@@ -141,7 +145,8 @@ app.post("/chat", async (req, res) => {
 });
 
 
-// Start the server on port 3000 and log a message to the console indicating that the server is running and providing the URL to access it.
+// Start the server on port 3000 and log a message
+// to the console indicating that the server is running and providing the URL to access it.
 app.listen(3000, () => {
     console.log("Server running at http://localhost:3000");
 });

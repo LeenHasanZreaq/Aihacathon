@@ -8,7 +8,8 @@ body {
     font-family: Inter, sans-serif;
 }
 
-/* Main container */
+/* body of the chat container */
+
 .chat-container {
     width: 400px;
     height: 550px;
@@ -19,7 +20,7 @@ body {
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
 }
 
-/* Header */
+/* Header in chat with NLAI*/
 .chat-header {
     padding: 15px;
     text-align: center;
@@ -29,7 +30,7 @@ body {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Messages area */
+/* make the shadow of the chat container */
 .chat-messages {
     flex: 1;
     padding: 15px;
@@ -39,7 +40,7 @@ body {
     gap: 10px;
 }
 
-/* Message bubbles */
+/* make the shape of message bubbles */
 .message {
     max-width: 75%;
     padding: 10px 14px;
@@ -48,19 +49,22 @@ body {
     line-height: 1.4;
 }
 
+/* make the AI message bubble style */
 .message.ai {
     align-self: flex-start;
     background: rgba(255, 255, 255, 0.15);
     color: white;
 }
 
+
+/* make the user message bubble style */
 .message.user {
     align-self: flex-end;
-    background: linear-gradient(135deg, #6a5acd, #00bcd4);
+    background: linear-gradient(135deg, #234fa9, #2619bbb8);
     color: white;
 }
 
-/* Input area */
+/* make the shape of the input area , under the messages */
 .chat-input {
     display: flex;
     padding: 10px;
@@ -68,6 +72,7 @@ body {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* make the input field look better */
 .chat-input input {
     flex: 1;
     padding: 10px;
@@ -76,17 +81,19 @@ body {
     outline: none;
 }
 
+
+/* make the send button look better */
 .chat-input button {
     padding: 10px 18px;
     border-radius: 20px;
     border: none;
     cursor: pointer;
-    background: #00bcd4;
+    background: #3b05d1;
     color: white;
     font-weight: bold;
 }
 
-/* Tasks container styling */
+/* make the tasks container look better */
 .tasks-container {
     margin-top: 10px;
     padding: 8px;
@@ -96,6 +103,9 @@ body {
     font-size: 12px;
 }
 
+
+
+/* make the task items look better */
 .task-item {
     margin-top: 6px;
     padding: 6px;

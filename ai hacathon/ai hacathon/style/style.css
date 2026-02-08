@@ -185,11 +185,11 @@ header h1 {
     background: linear-gradient(135deg, #110370, #5b9198);
     color: white;
 
-    box-shadow: 0 10px 25px rgba(141, 1, 1, 0.4);
+    box-shadow: 0 10px 25px rgba(103, 95, 200, 0.4);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .chat-btn:hover {
     transform: scale(1.05);
-    box-shadow: 0 15px 35px rgba(202, 111, 111, 0.6);
+    box-shadow: 0 15px 35px rgba(31, 129, 186, 0.6);
 }
